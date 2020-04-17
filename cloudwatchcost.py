@@ -43,8 +43,8 @@ def lambda_handler(event, context):
     logging.info("1 day ago: $"+(str('{0:.2f}'.format(COST1DAYAGO))))
     logging.info("2 days ago: $"+(str('{0:.2f}'.format(COST2DAYAGO))))
     logging.info("3 days ago: $"+(str('{0:.2f}'.format(COST3DAYAGO))))
-    
-    TREND = (((COST3DAYAGO + COST2DAYAGO) / 2) - COST1DAYAGO)
+
+    TREND = (COST1DAYAGO - ((COST3DAYAGO + COST2DAYAGO) / 2))    
     logging.info("TREND: $"+(str('{0:.2f}'.format(TREND))))
     
     
